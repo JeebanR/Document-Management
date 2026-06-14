@@ -1,0 +1,64 @@
+:root {
+  /* ── Color tokens ── */
+  --paper: #F7F4EC;
+  --paper-raised: #FFFFFF;
+  --ink: #1F2A37;
+  --ink-soft: #5B6472;
+  --manila: #E8DCC4;
+  --manila-line: #D8CFC0;
+  --stamp: #B23A2E;
+  --stamp-soft: #F4DDD8;
+  --line: #DAD3C5;
+  --success: #3E6B4F;
+  --success-soft: #E1ECE3;
+
+  /* ── Type ── */
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 31px, var(--line) 31px, var(--line) 32px);
+  background-attachment: local;
+}
+
+a { color: inherit; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+}
+
+input, select {
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--manila);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

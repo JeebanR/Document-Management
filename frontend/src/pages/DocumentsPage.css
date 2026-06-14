@@ -1,0 +1,115 @@
+.registry-search {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.registry-search input {
+  flex: 1;
+  max-width: 320px;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper-raised);
+}
+
+.registry-search input:focus {
+  border-color: var(--ink-soft);
+}
+
+.registry-table-wrap {
+  overflow-x: auto;
+}
+
+.registry-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.registry-table thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1.5px solid var(--ink);
+  white-space: nowrap;
+}
+
+.registry-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.registry-table th.sortable:hover { color: var(--ink); }
+
+.sort-arrow {
+  font-size: 0.6rem;
+  color: var(--stamp);
+}
+
+.registry-table tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+.registry-table tbody tr:last-child { border-bottom: none; }
+.registry-table tbody tr:hover { background: var(--paper); }
+
+.registry-table td {
+  padding: 0.85rem 1.1rem;
+  vertical-align: middle;
+}
+
+.registry-table__title {
+  font-weight: 600;
+}
+
+.registry-table__filename {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+
+.registry-table__mono {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.registry-table__muted {
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.registry-table__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.pagination__status {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 640px) {
+  .registry-table thead th:nth-child(2),
+  .registry-table tbody td:nth-child(2) {
+    display: none;
+  }
+}

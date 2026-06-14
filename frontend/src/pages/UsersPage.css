@@ -1,0 +1,28 @@
+.role-filter {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper-raised);
+  font-family: var(--font-mono);
+}
+
+.role-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.role-select {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.4rem;
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper-raised);
+}
+
+.role-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

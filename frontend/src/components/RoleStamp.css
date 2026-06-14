@@ -1,0 +1,29 @@
+.role-stamp {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+  line-height: 1.4;
+}
+
+.role-stamp--admin {
+  color: var(--stamp);
+  background: var(--stamp-soft);
+}
+
+.role-stamp--manager {
+  color: #8A6A1E;
+  background: #F6ECD6;
+}
+
+.role-stamp--employee {
+  color: var(--success);
+  background: var(--success-soft);
+}

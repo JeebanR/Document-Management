@@ -3,20 +3,30 @@ import { logger } from './logger';
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
-  host: process.env.DB_HOST || 'localhost',
+  host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT || '5432', 10),
-  database: process.env.DB_NAME || 'docvault_db',
-  username: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+
   logging: (msg) => logger.debug(msg),
+
   pool: {
     max: 10,
     min: 2,
     acquire: 30000,
     idle: 10000,
   },
+
   define: {
-    underscored: true,      // snake_case columns
+    underscored: true,
     timestamps: true,
     freezeTableName: false,
   },
@@ -24,7 +34,8 @@ const sequelize = new Sequelize({
 
 export async function connectDatabase(): Promise<void> {
   await sequelize.authenticate();
-  // In dev, sync without force. Run migrations in production.
+  console.log('✅ Database connected');
+
   if (process.env.NODE_ENV === 'development') {
     await sequelize.sync({ alter: false });
   }

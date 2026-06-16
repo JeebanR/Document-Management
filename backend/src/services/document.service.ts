@@ -38,7 +38,7 @@ export class DocumentService {
         fs.unlinkSync(file.path);
       }
     } else {
-      fileUrl = `/uploads/${file.filename}`;
+      fileUrl = `${process.env.APP_URL}/uploads/${file.filename}`;
     }
 
     const data: CreateDocumentDto = {
